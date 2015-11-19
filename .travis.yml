@@ -1,2 +1,6 @@
 language: java
 sudo: false
+
+before_script:
+  mvn clean verify cobertura:cobertura coveralls:report -
+  DrepoToken=$COVERALLS_REPO_TOKEN
